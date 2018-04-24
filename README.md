@@ -1,373 +1,215 @@
-<p align="right"><a title="New «NexT» 6.0.0 version [Reloaded]" href="https://github.com/theme-next/hexo-theme-next">NexT v6.0.0 here :triangular_flag_on_post:</a></p>
+hexo-theme-yilia
+================
 
-<h1 align="center">NexT</h1>
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
+崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.me/) 查看效果。           
+ 
+如果想体验手机浏览效果，可以扫一下二维码：
 
-<p align="center">NexT is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
+![litten-qrcode](https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png)
 
-[![gitter-image]][gitter-url]
-[![mnt-image]](https://github.com/theme-next/hexo-theme-next)
-[![travis-image]][travis-url]
-[![rel-image]][releases-url]
-[![hexo-image]][hexo-url]
-[![lic-image]](LICENSE)
+—————————————————————
 
-* [Chinese Documentation](README.cn.md)
+**关于主题：**
 
-## Live Preview
+1. 崇尚简约       
+2. 追求移动端体验     
+3. 希望把加载速度做到极致（努力中）    
+4. 让大家把注意力放到内容上。这是本主题设计初衷      
+5. 主题不支持IE6，7，8。以后也不会     
 
-* :heart_decoration: Muse scheme: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
-* :six_pointed_star: Mist scheme: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
-* :pisces: Pisces scheme: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Rainy](https://rainylog.com)
-* :gemini: Gemini scheme: [Ivan.Nginx](https://almostover.ru) | [Raincal](https://raincal.com) | [Dandy](https://dandyxu.me)
+**近期更新（2017.07.09）：**
 
-More NexT examples [here](https://github.com/iissnan/hexo-theme-next/issues/119).
+2017.07.09
+1. 返回顶部
+2. TOC目录
 
-## Installation
+2016.12.04
+1. 打赏
+2. 搜索
+3. “更好的”标签云
+4. “更好的”分享
+5. 一些动画
 
-**1.** Change dir to **hexo root** directory. There must be `node_modules`, `source`, `themes` and other directories:
-   ```sh
-   $ cd hexo
-   $ ls
-   _config.yml  node_modules  package.json  public  scaffolds  source  themes
-   ```
+**计划中：**
 
-**2.** Get theme from GitHub. There are several variants to do it:
+1. 移动端优化
+             
+## 一、外观
 
-### Download [latest release version][releases-latest-url].
-   At most cases **stable**. Recommended for most users.
+####**常规**
 
-   [![curl-tar-wget-image]][curl-tar-wget-url]
+![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
 
-   ```sh
-   $ mkdir themes/next
-   $ curl -s https://api.github.com/repos/iissnan/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
-   ```
+####**手机**
 
-### Download [tagged release version][releases-url].
-   You must define version. Replace `v5.1.2` with any version from [tags list][tags-url].
+![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
 
-   [![curl-tar-image]][curl-tar-url]
+####**ipad横竖屏切换**
 
-   ```sh
-   $ mkdir themes/next
-   $ curl -L https://api.github.com/repos/iissnan/hexo-theme-next/tarball/v5.1.2 | tar -zxv -C themes/next --strip-components=1
-   ```
+![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
 
-   [![git-image]][git-url]
+## 二、开发者
 
-   ```sh
-   $ git clone --branch v5.1.2 https://github.com/iissnan/hexo-theme-next themes/next
-   ```
+为了性能和开发工程化考虑，Yilia需要使用webpack进行构建生成。
 
-### Download [latest master branch][download-latest-url].
-   May be **unstable**, but includes latest features. Recommended for developers.
+如果您对主题有一些定制化的需求，请参考wiki[《Yilia源码目录结构及构建须知》](https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5)
 
-   [![curl-tar-image]][curl-tar-url]
+## 三、使用
 
-   ```sh
-   $ mkdir themes/next
-   $ curl -L https://api.github.com/repos/iissnan/hexo-theme-next/tarball | tar -zxv -C themes/next --strip-components=1
-   ```
+#### 安装
 
-   [![git-image]][git-url]
-
-   ```sh
-   $ git clone https://github.com/iissnan/hexo-theme-next themes/next
-   ```
-
-   Clone command will give you the **whole repository**. And in any time you can switch to any tagged release.\
-   Get tags list:
-
-   ```sh
-   $ cd themes/next
-   $ git tag -l
-   …
-   v5.0.0
-   v5.0.1
-   v5.1.0
-   v5.1.1
-   v5.1.2
-   ```
-
-   For example, you want to switch on `v5.1.0` [tagged release version][tags-url]. Input the following command:
-
-   ```sh
-   $ git checkout tags/v5.1.0
-   Note: checking out 'tags/v5.1.0'.
-   …
-   HEAD now on 1f72f68... CSS: Remove global list-style setting of ul
-   ```
-
-   And if you want to switch back on [master branch][commits-url], input this command:
-
-   ```sh
-   $ git checkout master
-   ```
-
-**3.** Set theme in main **hexo root config** `_config.yml` file:
-
-    theme: next
-
-### Bugs
-For those who also encounter **Error: Cannot find module 'hexo-util'** [issue](https://github.com/iissnan/hexo-theme-next/issues/1490), please check your NPM version.
-
-- `> 3`: Still not work. Please remove `node_modules` directory and reinstall using `npm install`.
-- `< 3`: Please add `hexo-util` explicitly via `npm install --save-dev hexo-util` to you site package deps.
-
-## Update
-
-```sh
-$ cd themes/next
-$ git pull
+``` bash
+$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 ```
 
-### Bugs
+#### 配置
 
-> Commit your changes or stash them before you can merge
+修改hexo根目录下的 `_config.yml` ： `theme: yilia`
 
-You must Commit, Stash or Discard local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
+#### 更新
 
-### Theme configurations using Hexo data files ([#328](https://github.com/iissnan/hexo-theme-next/issues/328))
-
-Currently, it is not smooth to update NexT theme from pulling or downloading new releases. It is quite often running into conflict status when updating NexT theme via `git pull`, or need to merge configurations manually when upgrading to new releases.
-
- At present, NexT encourages users to store some options in site's `_config.yml` and other options in theme's `_config.yml`. This approach is applicable, but has some drawbacks:
-1. Configurations are splited into two pieces
-2. Users maybe confuse which place should be for options
-
-In order to resolve this issue, NexT will take advantage of Hexo [Data files](https://hexo.io/docs/data-files.html). Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.
-
-If you prefer Hexo 2.x, you can still use the old approach for configurations. NexT is still compatible with Hexo 2.x.
-
-#### Benefits
-
-With this feature, now you can put all your configurations into one place (`source/_data/next.yml`), you don't need to touch `next/_config.yml`. If there are any new options in new releases, you just need to copy those options from `next/_config.yml`, paste into `_data/next.yml` and set their values to whatever you want.
-
-#### How to use this feature
-
-1. Please ensure you are using Hexo 3 (or above)
-2. Create an file named `next.yml` in site's `source/_data` directory (create `_data` directory if it did not exist)
-3. Copy NexT theme options both in site's `_config.yml` and theme's `_config.yml` into `next.yml`.
-4. Use `--config source/_data/next.yml` parameter to start server, generate or deploy.\
-   For example: `hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml`.
-
-## Features
-
-### Multiple languages support, including:
-:cn: Simplified Chinese & Traditional Chinese.<br>
-:us: English<br>
-:ru: Russian<br>
-:fr: French<br>
-:de: German<br>
-:jp: Japanese<br>
-:indonesia: Indonesian<br>
-:portugal: Portuguese (Brazil)<br>
-:kr: Korean<br>
-:it: Italian<br>
-:netherlands: Dutch<br>
-:vietnam: Vietnamese
-
-Default language is English.
-
-```yml
-language: en
-# language: zh-Hans
-# language: zh-hk
-# language: zh-tw
-# language: ru
-# language: fr-FR
-# language: de
-# language: ja
-# language: id
-# language: pt
-# language: pt-BR
-# language: ko
-# language: it
-# language: nl-NL
-# language: vi
+``` bash
+cd themes/yilia
+git pull
 ```
 
-Set `language` field as following in site `_config.yml` to change to Chinese.
+## 四、配置
 
-```yml
-language: zh-Hans
+主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
+完整配置例子，可以参考[我的博客备份](https://github.com/litten/BlogBackup)
+
 ```
+# Header
 
-### Comment support.
-
-NexT has native support for `DuoShuo` and `Disqus` comment systems.
-
-Add the following snippets to your `_config.yml`:
-
-```yml
-duoshuo:
-  enable: true
-  shortname: your-duoshuo-shortname
-```
-
-OR
-
-```yml
-disqus_shortname: your-disqus-shortname
-```
-
-### Tags page.
-
-> Add a tags page contains all tags in your site.
-
-- Create a page named `tags`
-
-        hexo new page "tags"
-
-- Edit tags page, set page type to `tags`.
-
-        title: All tags
-        date: 2014-12-22 12:39:04
-        type: "tags"
-
-- Add `tags` to theme `_config.yml`:
-
-        menu:
-          home: /
-          archives: /archives
-          tags: /tags
-
-### Categories page.
-
-> Add a categories page contains all categories in your site.
-
-- Create a page named `categories`
-
-        hexo new page "categories"
-
-- Edit categories page, set page type to `categories`.
-
-        title: All categories
-        date: 2014-12-22 12:39:04
-        type: "categories"
-
-- Add `categories` to theme `_config.yml`:
-
-        menu:
-          home: /
-          archives: /archives
-          categories: /categories
-
-### Social Media
-
-NexT can automatically add links to your Social Media accounts:
-
-```yml
-social:
-  GitHub: your-github-url
-  Twitter: your-twitter-url
-  Weibo: your-weibo-url
-  DouBan: your-douban-url
-  ZhiHu: your-zhihu-url
-```
-
-### Feed link.
-
-> Show a feed link.
-
-Set `rss` field in theme's `_config.yml`, as the following value:
-
-1. `rss: false` will totally disable feed link.
-2. `rss:  ` use sites' feed link. This is the default option.
-
-    Follow the installation instruction in the plugin's README. After the configuration is done for this plugin, the feed link is ready too.
-
-3. `rss: http://your-feed-url` set specific feed link.
-
-### Up to 5 code highlight themes built-in.
-
-NexT uses [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) with 5 themes for you to choose from.
-Next use `normal` by default. Have a preview about `normal` and `night`:
-
-![Tomorrow Normal Preview](http://iissnan.com/nexus/next/tomorrow-normal.png)
-![Tomorrow Night Preview](http://iissnan.com/nexus/next/tomorrow-night.png)
-
-Head over to [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) for more details.
-
-## Configuration
-
-NexT comes with few configurations.
-
-```yml
-
-# Menu configuration.
 menu:
-  home: /
-  archives: /archives
+  主页: /
+  随笔: /tags/随笔/
 
-# Favicon
-favicon: /favicon.ico
+# SubNav
+subnav:
+  github: "#"
+  weibo: "#"
+  rss: "#"
+  zhihu: "#"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
+  #douban: "#"
+  #segmentfault: "#"
+  #bilibili: "#"
+  #acfun: "#"
+  #mail: "mailto:litten225@qq.com"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
 
-# Avatar (put the image into next/source/images/)
-# can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)
-avatar: /default_avatar.png
+rss: /atom.xml
 
-# Code highlight theme
-# available: normal | night | night eighties | night blue | night bright
-highlight_theme: normal
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root: 
 
-# Fancybox for image gallery
-fancybox: true
+# Content
 
-# Specify the date when the site was setup
-since: 2013
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: '展开全文'
+# 数学公式
+mathjax: false
+# 是否在新窗口打开链接
+open_in_new: false
 
+# 打赏
+# 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 2
+# 打赏wording
+reward_wording: '谢谢你请我吃糖果'
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+alipay: 
+# 微信二维码图片地址
+weixin: 
+
+# 目录
+# 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
+toc: 1
+# 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
+toc_hide_index: true
+# 目录为空时的提示
+toc_empty_wording: '目录，不存在的…'
+
+# 是否有快速回到顶部的按钮
+top: true
+
+# Miscellaneous
+baidu_analytics: ''
+google_analytics: ''
+favicon: /favicon.png
+
+#你的头像url
+avatar:
+
+#是否开启分享
+share_jia: true
+
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#不需要使用某项，直接设置值为false，或注释掉
+#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
+
+#1、多说
+duoshuo: false
+
+#2、网易云跟帖
+wangyiyun: false
+
+#3、畅言
+changyan_appid: false
+changyan_conf: false
+
+#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+disqus: false
+
+#5、Gitment
+gitment_owner: false      #你的 GitHub ID
+gitment_repo: ''          #存储评论的 repo
+gitment_oauth:
+  client_id: ''           #client ID
+  client_secret: ''       #client secret
+
+# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
+style:
+  # 头像上面的背景颜色
+  header: '#4d4d4d'
+  # 右滑板块背景
+  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+
+# slider的设置
+slider:
+  # 是否默认展开tags板块
+  showTags: false
+
+# 智能菜单
+# 如不需要，将该对应项置为false
+# 比如
+#smart_menu:
+#  friends: false
+smart_menu:
+  innerArchive: '所有文章'
+  friends: '友链'
+  aboutme: '关于我'
+
+friends:
+  友情链接1: http://localhost:4000/
+  友情链接2: http://localhost:4000/
+  友情链接3: http://localhost:4000/
+  友情链接4: http://localhost:4000/
+  友情链接5: http://localhost:4000/
+  友情链接6: http://localhost:4000/
+
+aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 ```
 
-## Browser support
 
-![browser-image]
-
-[![Browser Stack](.github/browserstack_logo.png)](https://www.browserstack.com/)
->**BrowserStack** is a cloud-based cross-browser testing tool that enables developers to test their websites across various browsers on different operating systems and mobile devices, without requiring users to install virtual machines, devices or emulators.
-
-## Contributing
-
-Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
-<!--
-[![hexo-image]][hexo-url]
-[![bower-image]][bower-url]
-[![jquery-image]][jquery-url]
-
-[hexo-image]: http://img.shields.io/badge/Hexo-2.4+-2BAF2B.svg?style=flat-square
-[hexo-url]: http://hexo.io
-[bower-image]: http://img.shields.io/badge/Bower-*-2BAF2B.svg?style=flat-square
-[bower-url]: http://bower.io
-[jquery-image]: https://img.shields.io/badge/jquery-1.9-blue.svg?style=flat-square
-[jquery-url]: http://jquery.com/
--->
-
-[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
-[browser-url]: https://www.browserstack.com
-
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/iissnan/hexo-theme-next?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-
-[travis-image]: https://travis-ci.org/iissnan/hexo-theme-next.svg?branch=master
-[travis-url]: https://travis-ci.org/iissnan/hexo-theme-next?branch=master "Travis CI"
-
-[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
-[hexo-url]: http://hexo.io
-
-[mnt-image]: https://img.shields.io/maintenance/yes/2017.svg
-[rel-image]: https://img.shields.io/github/release/iissnan/hexo-theme-next.svg
-<!--[lic-image]: https://img.shields.io/npm/l/hexo-theme-next.svg-->
-[lic-image]: https://img.shields.io/dub/l/vibe-d.svg
-
-[git-image]: https://img.shields.io/badge/install%20with%20-git-blue.svg
-[curl-tar-image]: https://img.shields.io/badge/install%20with%20-curl%20%7C%20tar-blue.svg
-[curl-tar-wget-image]: https://img.shields.io/badge/install%20with%20-curl%20%7C%20tar%20%7C%20wget-blue.svg
-[git-url]: http://lmgtfy.com/?q=linux+git+install
-[curl-tar-url]: http://lmgtfy.com/?q=linux+curl+tar+install
-[curl-tar-wget-url]: http://lmgtfy.com/?q=linux+curl+tar+wget+install
-
-[download-latest-url]: https://github.com/iissnan/hexo-theme-next/archive/master.zip
-[releases-latest-url]: https://github.com/iissnan/hexo-theme-next/releases/latest
-[releases-url]: https://github.com/iissnan/hexo-theme-next/releases
-[tags-url]: https://github.com/iissnan/hexo-theme-next/tags
-[commits-url]: https://github.com/iissnan/hexo-theme-next/commits/master
