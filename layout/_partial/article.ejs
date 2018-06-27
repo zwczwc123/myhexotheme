@@ -6,6 +6,13 @@
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
+		
+		<% if ( !index ){ %>
+				<span class="archive-article-date">
+					阅读量 <span id="busuanzi_value_page_pv"></span>
+				</span>
+		<% } %>
+		
 		<!-- 目录内容 -->
 		<% if (!index && post.toc){ %>
 			<p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
